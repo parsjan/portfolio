@@ -19,25 +19,25 @@ export default function Footer() {
   const socialLinks = [
     {
       name: "GitHub",
-      href: "https://github.com/parasjain",
+      href: "https://github.com/parsjan",
       icon: <Github className="h-5 w-5" />,
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/parasjain",
+      href: "https://www.linkedin.com/in/parasjai879a01247/",
       icon: <Linkedin className="h-5 w-5" />,
     },
     {
       name: "Email",
-      href: "mailto:paras.jain@email.com",
+      href: "mailto:parasjain230603@email.com",
       icon: <Mail className="h-5 w-5" />,
     },
     {
       name: "Phone",
-      href: "tel:+919876543210",
+      href: "tel:+91934050933",
       icon: <Phone className="h-5 w-5" />,
     },
-  ]
+  ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })

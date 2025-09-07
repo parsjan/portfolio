@@ -10,14 +10,38 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function ExperienceSection() {
   const [activeIndex, setActiveIndex] = useState(0)
 
+  function timeFromAugust2025(): string {
+  const currentDate = new Date();
+  const august2025 = new Date("2025-08-01");
+
+  // Difference in months
+  let diffMonths =
+    (currentDate.getFullYear() - august2025.getFullYear()) * 12 +
+    (currentDate.getMonth() - august2025.getMonth());
+
+  if (diffMonths < 0) {
+    return "Already passed";
+  }
+
+  if (diffMonths >= 12) {
+    const years = Math.floor(diffMonths / 12);
+    const months = diffMonths % 12;
+    return months > 0
+      ? `${years} years ${months} months`
+      : `${years} years`;
+  } else {
+    return `${diffMonths} months`;
+  }
+}
+
   const experiences = [
     {
       company: "Medecro Technologies Pvt Ltd",
       role: "Software Development Engineer (SDE-1)",
-      period: "2024 - Present",
+      period: "August 2025 - Present",
       location: "India",
       type: "Full-time",
-      duration: "1+ Years",
+      duration: timeFromAugust2025(),
       icon: <Trophy className="h-6 w-6" />,
       color: "from-blue-500 to-cyan-500",
       achievements: [
@@ -27,16 +51,23 @@ export default function ExperienceSection() {
         "Led UAT-driven enhancements for patient management and billing systems",
         "Collaborated with cross-functional teams to deliver scalable healthcare solutions",
       ],
-      technologies: ["React", "MobX", "Node.js", "REST APIs", "AI/ML", "Healthcare Systems"],
-      stats: { projects: "15+", apis: "30+", uptime: "99.9%" },
+      technologies: [
+        "React",
+        "MobX",
+        "Node.js",
+        "REST APIs",
+        "AI/ML",
+        "Healthcare Systems",
+      ],
+      stats: { deployments: "20+", apis: "30+", uptime: "99.9%" },
     },
     {
       company: "Medecro Technologies Pvt Ltd",
       role: "Software Development Intern",
-      period: "2023 - 2024",
+      period: "August 2024 - July 2025",
       location: "India",
       type: "Internship",
-      duration: "8 Months",
+      duration: "1 year",
       icon: <Code className="h-6 w-6" />,
       color: "from-purple-500 to-pink-500",
       achievements: [
@@ -46,13 +77,21 @@ export default function ExperienceSection() {
         "Contributed to cloud deployment strategies using AWS services",
         "Participated in code reviews and agile development processes",
       ],
-      technologies: ["FastAPI", "MongoDB", "Docker", "Kubernetes", "GitHub Actions", "JWT", "AWS"],
-      stats: { deployments: "20+", services: "5", performance: "+35%" },
+      technologies: [
+        "FastAPI",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "GitHub Actions",
+        "JWT",
+        "AWS",
+      ],
+      stats: { projects: "4+", services: "5", performance: "+35%" },
     },
     {
       company: "Legabyte Innovations",
       role: "Backend Development Intern",
-      period: "2023",
+      period: "April 2024 - July 2024",
       location: "India",
       type: "Internship",
       duration: "4 Months",
@@ -65,10 +104,17 @@ export default function ExperienceSection() {
         "Implemented automated testing suites for API endpoints",
         "Collaborated with frontend teams for seamless API integration",
       ],
-      technologies: ["Python", "FastAPI", "PostgreSQL", "API Development", "Testing", "Integration"],
+      technologies: [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "API Development",
+        "Testing",
+        "Integration",
+      ],
       stats: { apis: "12+", integrations: "8", tests: "100+" },
     },
-  ]
+  ];
 
   const nextExperience = () => {
     setActiveIndex((prev) => (prev + 1) % experiences.length)

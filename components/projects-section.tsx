@@ -11,7 +11,15 @@ export default function ProjectsSection() {
       description:
         "A comprehensive trip planning system that leverages Google Maps API and AI to create personalized travel itineraries. Features real-time location tracking, budget optimization, and social sharing capabilities.",
       image: "/travel-app-maps.png",
-      technologies: ["React", "Node.js", "Google Maps API", "MongoDB", "Express", "JWT", "AI/ML"],
+      technologies: [
+        "React",
+        "Node.js",
+        "Google Maps API",
+        "MongoDB",
+        "Express",
+        "JWT",
+        "AI/ML",
+      ],
       features: [
         "115+ REST API endpoints for comprehensive functionality",
         "Real-time Google Maps integration with route optimization",
@@ -22,14 +30,13 @@ export default function ProjectsSection() {
       ],
       stats: {
         endpoints: "115+",
-        users: "1K+",
-        uptime: "99.9%",
+        Testing_users: "1K+",
       },
       links: {
-        github: "https://github.com/parasjain/yatra-yojna",
-        demo: "https://yatra-yojna-demo.vercel.app",
+        github: "https://github.com/parsjan/Trip-planner-test",
+        demo: "https://drive.google.com/file/d/1Yy0NZEQ39fIPBF1VpP9muOUp2UyTExRi/view",
       },
-      status: "Production",
+      status: "Testing",
     },
     {
       title: "Healthcare Management System",
@@ -37,7 +44,15 @@ export default function ProjectsSection() {
       description:
         "Enterprise-grade healthcare management system built for Medecro Technologies. Handles patient records, appointment scheduling, billing, and medical history with advanced security features.",
       image: "/healthcare-dashboard.png",
-      technologies: ["React", "MobX", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "AWS"],
+      technologies: [
+        "React",
+        "MobX",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+      ],
       features: [
         "Secure patient data management with HIPAA compliance",
         "Real-time appointment scheduling and notifications",
@@ -52,8 +67,8 @@ export default function ProjectsSection() {
         security: "HIPAA",
       },
       links: {
-        github: "https://github.com/medecro/healthcare-system",
-        demo: "https://medecro-demo.com",
+        blog:"", //redirection link to blog for making medecro clinic management system 
+        demo: "https://medecro.com",
       },
       status: "Enterprise",
     },
@@ -63,7 +78,15 @@ export default function ProjectsSection() {
       description:
         "Scalable microservices architecture for AI/ML predictions with 30+ optimized REST APIs. Features real-time model inference, batch processing, and comprehensive monitoring.",
       image: "/ai-dashboard.png",
-      technologies: ["Python", "FastAPI", "TensorFlow", "Redis", "Docker", "Kubernetes", "Prometheus"],
+      technologies: [
+        "Python",
+        "FastAPI",
+        "TensorFlow",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "Prometheus",
+      ],
       features: [
         "30+ REST APIs for various ML model predictions",
         "Real-time inference with sub-100ms response times",
@@ -78,12 +101,11 @@ export default function ProjectsSection() {
         accuracy: "95%+",
       },
       links: {
-        github: "https://github.com/parasjain/ai-prediction-suite",
-        demo: "https://ai-predictions-demo.com",
+        blog: "", // enginnering blog for ai radiography analyzer link
       },
       status: "Production",
     },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">

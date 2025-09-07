@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowDown, Download, Mail, Github, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
@@ -56,7 +57,10 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
@@ -98,7 +102,12 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-8"
+        >
           <motion.div variants={itemVariants} className="space-y-4">
             <motion.h1
               className="text-5xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
@@ -170,18 +179,28 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              <Link
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatDelay: 3 }}
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
-                  <Download className="mr-2 h-5 w-5" />
-                </motion.div>
-                View Resume
-              </Button>
+                  <motion.div
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatDelay: 3,
+                    }}
+                  >
+                    <Download className="mr-2 h-5 w-5" />
+                  </motion.div>
+                  View Resume
+                </Button>
+              </Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
@@ -196,7 +215,11 @@ export default function HeroSection() {
               >
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatDelay: 2 }}
+                  transition={{
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatDelay: 2,
+                  }}
                 >
                   <Mail className="mr-2 h-5 w-5" />
                 </motion.div>
@@ -205,10 +228,21 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex justify-center space-x-6 pt-8">
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center space-x-6 pt-8"
+          >
             {[
-              { href: "https://github.com/parasjain", icon: Github, label: "GitHub" },
-              { href: "https://linkedin.com/in/parasjain", icon: Linkedin, label: "LinkedIn" },
+              {
+                href: "https://github.com/parsjan",
+                icon: Github,
+                label: "GitHub",
+              },
+              {
+                href: "https://www.linkedin.com/in/parasjai879a01247/",
+                icon: Linkedin,
+                label: "LinkedIn",
+              },
             ].map((social, index) => (
               <motion.a
                 key={social.label}
@@ -246,5 +280,5 @@ export default function HeroSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

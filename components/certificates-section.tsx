@@ -8,27 +8,42 @@ import { ExternalLink, Award, Calendar, CheckCircle } from "lucide-react"
 export default function CertificatesSection() {
   const certificates = [
     {
-      title: "CCNA - Cisco Certified Network Associate",
+      title: "CCNA - Cisco Certified Network Associate - Guide",
       issuer: "Cisco Systems",
-      date: "2023",
-      credentialId: "CCNA-2023-PJ-001",
+      date: "2025",
+      // credentialId: "CCNA-2023-PJ-001",
       description:
         "Comprehensive networking certification covering routing, switching, network security, and troubleshooting. Demonstrates expertise in network fundamentals and Cisco technologies.",
-      skills: ["Network Configuration", "Routing & Switching", "Network Security", "Troubleshooting", "Cisco IOS"],
-      verificationUrl: "https://cisco.com/verify/ccna-parasjain",
+      skills: [
+        "Network Configuration",
+        "Routing & Switching",
+        "Network Security",
+        "Troubleshooting",
+        "Cisco IOS",
+      ],
+      verificationUrl:
+        "https://drive.google.com/file/d/152W575A8Nt1-AkjtiS4rnxKSs7RDPUcN/view?usp=sharing",
       image: "/cisco-ccna-badge.png",
       color: "from-blue-600 to-blue-800",
       status: "Verified",
     },
     {
-      title: "DevOps Foundation Certification",
+      title: "DevOps Foundation Certification - Guide ",
       issuer: "DevOps Institute",
-      date: "2023",
-      credentialId: "DOI-2023-DEV-789",
+      date: "2025",
+      // credentialId: "DOI-2023-DEV-789",
       description:
         "Foundational certification in DevOps practices, covering CI/CD pipelines, automation, containerization, and cloud deployment strategies for modern software development.",
-      skills: ["CI/CD Pipelines", "Docker", "Kubernetes", "Automation", "Cloud Deployment", "Monitoring"],
-      verificationUrl: "https://devopsinstitute.com/verify/parasjain-devops",
+      skills: [
+        "CI/CD Pipelines",
+        "Docker",
+        "Kubernetes",
+        "Automation",
+        "Cloud Deployment",
+        "Monitoring",
+      ],
+      verificationUrl:
+        "https://drive.google.com/file/d/1-Me5hc41FiDLUUe4qD3oqeY7KsYBDTOw/view?usp=sharing",
       image: "/devops-certification-badge.png",
       color: "from-green-600 to-emerald-700",
       status: "Verified",
@@ -36,17 +51,25 @@ export default function CertificatesSection() {
     {
       title: "CKAD - Certified Kubernetes Application Developer",
       issuer: "Cloud Native Computing Foundation",
-      date: "2024",
-      credentialId: "CKAD-2024-456-PJ",
+      date: "2025",
+      // credentialId: "CKAD-2024-456-PJ",
       description:
         "Advanced Kubernetes certification focusing on application development, deployment, and management in Kubernetes environments. Validates hands-on experience with container orchestration.",
-      skills: ["Kubernetes", "Container Orchestration", "Pod Management", "Services & Networking", "Helm", "YAML"],
-      verificationUrl: "https://cncf.io/verify/ckad-parasjain",
+      skills: [
+        "Kubernetes",
+        "Container Orchestration",
+        "Pod Management",
+        "Services & Networking",
+        "Helm",
+        "YAML",
+      ],
+      verificationUrl:
+        "https://drive.google.com/file/d/1GZs1eP8KDs1cfrEJHNo6-eWZHhgE3dbK/view?usp=sharing",
       image: "/kubernetes-ckad-badge.png",
       color: "from-purple-600 to-indigo-700",
       status: "Verified",
     },
-  ]
+  ];
 
   return (
     <section id="certificates" className="py-20 relative overflow-hidden">

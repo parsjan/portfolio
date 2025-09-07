@@ -170,10 +170,10 @@ export default function SkillsSection() {
         {/* Skills Summary Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { icon: <Code className="h-8 w-8" />, number: "6+", label: "Programming Languages" },
-            { icon: <Server className="h-8 w-8" />, number: "10+", label: "Backend Technologies" },
-            { icon: <Globe className="h-8 w-8" />, number: "8+", label: "Frontend Frameworks" },
-            { icon: <Cloud className="h-8 w-8" />, number: "15+", label: "DevOps Tools" },
+            { icon: <Code className="h-8 w-8" />, number: "4", label: "Programming Languages" },
+            { icon: <Server className="h-8 w-8" />, number: "2", label: "Backend Technologies" },
+            { icon: <Globe className="h-8 w-8" />, number: "2", label: "Frontend Frameworks" },
+            { icon: <Cloud className="h-8 w-8" />, number: "7+", label: "DevOps Tools" },
           ].map((stat, index) => (
             <div
               key={index}

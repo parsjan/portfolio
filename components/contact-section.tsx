@@ -24,39 +24,39 @@ export default function ContactSection() {
     {
       icon: <Mail className="h-6 w-6" />,
       label: "Email",
-      value: "paras.jain@email.com",
-      href: "mailto:paras.jain@email.com",
+      value: "parasjain230620@email.com",
+      href: "mailto:parasjain230620@email.com",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: "+91 9340505933",
+      href: "tel:+919340505933",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       label: "Location",
-      value: "Gwalior, India",
-      href: "https://maps.google.com/?q=Gwalior,India",
+      value: "Noida, India",
+      href: "https://maps.google.com/?q=Noida,India",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <Github className="h-6 w-6" />,
       label: "GitHub",
       value: "github.com/parasjain",
-      href: "https://github.com/parasjain",
+      href: "https://github.com/parsjan",
       color: "from-gray-600 to-gray-800",
     },
     {
       icon: <Linkedin className="h-6 w-6" />,
       label: "LinkedIn",
       value: "linkedin.com/in/parasjain",
-      href: "https://linkedin.com/in/parasjain",
+      href: "https://www.linkedin.com/in/parasjai879a01247/",
       color: "from-blue-600 to-blue-800",
     },
-  ]
+  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
