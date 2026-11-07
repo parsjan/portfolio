@@ -7,7 +7,6 @@ import { useTheme } from "next-themes"
 import TerminalOverlay from "./terminal-overlay"
 import StorylineOverlay from "./storyline-overlay"
 import Skills3DShowroom from "./skills-3d-showroom"
-import SkillsSolarSystem from "./skills-solar-system"
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,6 +31,7 @@ export default function Navigation() {
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
   ]
 
@@ -171,7 +171,6 @@ export default function Navigation() {
         isOpen={is3DSkillsOpen}
         onClose={() => setIs3DSkillsOpen(false)}
       />
-      {/* <SkillsSolarSystem/> */}
     </>
   );
 }

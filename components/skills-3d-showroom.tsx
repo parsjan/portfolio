@@ -18,170 +18,39 @@ interface SkillData {
 }
 
 const skillsData: SkillData[] = [
-  // Languages
-  {
-    name: "JavaScript",
-    category: "Languages",
-    position: [-8, 2, 0],
-    color: "#F7DF1E",
-    description: "5+ years of experience building dynamic web applications",
-    type: "text",
-  },
-  {
-    name: "TypeScript",
-    category: "Languages",
-    position: [-6, 3, -2],
-    color: "#3178C6",
-    description: "Strong typing for scalable applications",
-    type: "text",
-  },
-  {
-    name: "Python",
-    category: "Languages",
-    position: [-4, 1, 1],
-    color: "#3776AB",
-    description: "Backend development and automation scripts",
-    type: "sphere",
-  },
+  // Containers & Orchestration
+  { name: "Kubernetes", category: "Containers & Orchestration", position: [-8, 2, 0], color: "#326CE5", description: "Clusters across dev, staging, and production on AWS EKS and Azure AKS", type: "torus" },
+  { name: "Docker", category: "Containers & Orchestration", position: [-6, 3, -2], color: "#2496ED", description: "Containerized backend, frontend, and AI / LLM services", type: "cube" },
+  { name: "Helm", category: "Containers & Orchestration", position: [-4, 1, 1], color: "#0F1689", description: "Reusable charts for multi-environment rollouts", type: "octahedron" },
 
-  // Frontend
-  {
-    name: "React",
-    category: "Frontend",
-    position: [0, 4, 0],
-    color: "#61DAFB",
-    description: "Component-based UI development",
-    type: "octahedron",
-  },
-  {
-    name: "Next.js",
-    category: "Frontend",
-    position: [2, 2, -1],
-    color: "#000000",
-    description: "Full-stack React framework",
-    type: "cube",
-  },
-  {
-    name: "Tailwind",
-    category: "Frontend",
-    position: [4, 3, 1],
-    color: "#06B6D4",
-    description: "Utility-first CSS framework",
-    type: "torus",
-  },
+  // CI/CD & IaC
+  { name: "GitHub Actions", category: "CI/CD & IaC", position: [0, 4, 0], color: "#2088FF", description: "Automated Docker builds, image versioning, and deployments", type: "sphere" },
+  { name: "ArgoCD", category: "CI/CD & IaC", position: [2, 2, -1], color: "#EF7B4D", description: "GitOps continuous delivery", type: "octahedron" },
+  { name: "Terraform", category: "CI/CD & IaC", position: [4, 3, 1], color: "#7B42BC", description: "Infrastructure as code", type: "cube" },
+  { name: "Ansible", category: "CI/CD & IaC", position: [-2, -2, 2], color: "#EE0000", description: "Configuration management and automation", type: "sphere" },
 
-  // Backend
-  {
-    name: "Node.js",
-    category: "Backend",
-    position: [-2, -2, 2],
-    color: "#339933",
-    description: "Server-side JavaScript runtime",
-    type: "sphere",
-  },
-  {
-    name: "Express.js",
-    category: "Backend",
-    position: [0, -1, -2],
-    color: "#000000",
-    description: "Minimal web framework for Node.js",
-    type: "cube",
-  },
-  {
-    name: "FastAPI",
-    category: "Backend",
-    position: [2, -3, 0],
-    color: "#009688",
-    description: "Modern Python web framework",
-    type: "octahedron",
-  },
+  // Cloud
+  { name: "AWS", category: "Cloud", position: [0, -1, -2], color: "#FF9900", description: "Production: EC2, S3, EKS, ECR, VPC, IAM, ELB, EBS", type: "sphere" },
+  { name: "Azure", category: "Cloud", position: [2, -3, 0], color: "#0078D4", description: "Development: AKS, ACR, VNet, Blob Storage, Key Vault", type: "torus" },
+  { name: "Cloudflare", category: "Cloud", position: [6, 1, -2], color: "#F38020", description: "DNS and domain management", type: "octahedron" },
 
-  // State Management
-  {
-    name: "Redux",
-    category: "State Management",
-    position: [6, 1, -2],
-    color: "#764ABC",
-    description: "Predictable state container",
-    type: "torus",
-  },
-  {
-    name: "MobX",
-    category: "State Management",
-    position: [8, -1, 0],
-    color: "#FF9955",
-    description: "Simple, scalable state management",
-    type: "cube",
-  },
-  {
-    name: "Zustand",
-    category: "State Management",
-    position: [7, 2, 2],
-    color: "#2D3748",
-    description: "Lightweight state management",
-    type: "sphere",
-  },
+  // Observability
+  { name: "Prometheus", category: "Observability", position: [8, -1, 0], color: "#E6522C", description: "Cluster metrics and alerting with Alertmanager", type: "cube" },
+  { name: "Grafana", category: "Observability", position: [7, 2, 2], color: "#F46800", description: "Dashboards for metrics and logs", type: "sphere" },
+  { name: "Loki", category: "Observability", position: [-6, -4, -1], color: "#F5A623", description: "Log aggregation", type: "torus" },
+
+  // Networking & Security
+  { name: "Nginx Ingress", category: "Networking & Security", position: [-4, -2, -3], color: "#009639", description: "Ingress, load balancing, and TLS via cert-manager", type: "cube" },
+
+  // Languages & OS
+  { name: "Linux", category: "Languages & OS", position: [-2, -4, 1], color: "#FCC624", description: "Day-to-day operating environment", type: "octahedron" },
+  { name: "Bash", category: "Languages & OS", position: [4, -1, 3], color: "#4EAA25", description: "Automation and scripting", type: "text" },
+  { name: "Python", category: "Languages & OS", position: [6, -3, 1], color: "#3776AB", description: "Automation and backend services", type: "sphere" },
 
   // Databases
-  {
-    name: "MongoDB",
-    category: "Databases",
-    position: [-6, -4, -1],
-    color: "#47A248",
-    description: "NoSQL document database",
-    type: "sphere",
-  },
-  {
-    name: "PostgreSQL",
-    category: "Databases",
-    position: [-4, -2, -3],
-    color: "#336791",
-    description: "Advanced relational database",
-    type: "cube",
-  },
-  {
-    name: "MySQL",
-    category: "Databases",
-    position: [-2, -4, 1],
-    color: "#4479A1",
-    description: "Popular relational database",
-    type: "octahedron",
-  },
-
-  // DevOps & Cloud
-  {
-    name: "Docker",
-    category: "DevOps",
-    position: [4, -1, 3],
-    color: "#2496ED",
-    description: "Containerization platform",
-    type: "cube",
-  },
-  {
-    name: "Kubernetes",
-    category: "DevOps",
-    position: [6, -3, 1],
-    color: "#326CE5",
-    description: "Container orchestration",
-    type: "torus",
-  },
-  {
-    name: "AWS",
-    category: "Cloud",
-    position: [8, 0, -3],
-    color: "#FF9900",
-    description: "Cloud computing services",
-    type: "sphere",
-  },
-  {
-    name: "GitHub",
-    category: "DevOps",
-    position: [-8, 0, 3],
-    color: "#181717",
-    description: "Version control and collaboration",
-    type: "octahedron",
-  },
-];
+  { name: "PostgreSQL", category: "Databases", position: [8, 0, -3], color: "#336791", description: "Relational database", type: "cube" },
+  { name: "MongoDB", category: "Databases", position: [-8, 0, 3], color: "#47A248", description: "Document database", type: "octahedron" },
+]
 
 // ShootingStar animation component (bigger, curvy path, sparkling, glitter trail)
 function ShootingStarFlyBack({

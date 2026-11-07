@@ -18,23 +18,23 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Paras Jain - Software Development Engineer | Backend & DevOps Expert",
+  title: "Paras Jain - DevOps & Platform Engineer | Kubernetes | Multi-Cloud",
   description:
-    "Portfolio of Paras Jain, SDE-1 at Medecro Technologies. Specializing in scalable systems, AI-driven applications, and cloud-native solutions with expertise in Node.js, Python, Kubernetes, and modern web technologies.",
+    "Portfolio of Paras Jain, DevOps Engineer at Medecro Technologies. Multi-cloud Kubernetes (AWS, Azure), CI/CD with GitHub Actions, Helm and ArgoCD, Terraform, and observability with Prometheus and Grafana.",
   keywords:
-    "Paras Jain, Software Engineer, Backend Developer, DevOps, Kubernetes, Node.js, Python, AI, Cloud Computing, Full Stack Developer",
+    "Paras Jain, DevOps Engineer, Platform Engineer, Kubernetes, AWS, Azure, Terraform, Helm, ArgoCD, GitHub Actions, Prometheus, Grafana",
   authors: [{ name: "Paras Jain" }],
   creator: "Paras Jain",
   openGraph: {
-    title: "Paras Jain - Software Development Engineer",
-    description: "Building scalable systems, AI-driven apps, and cloud-native solutions",
+    title: "Paras Jain - DevOps & Platform Engineer",
+    description: "Multi-cloud Kubernetes, CI/CD automation, and production reliability",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paras Jain - Software Development Engineer",
-    description: "Building scalable systems, AI-driven apps, and cloud-native solutions",
+    title: "Paras Jain - DevOps & Platform Engineer",
+    description: "Multi-cloud Kubernetes, CI/CD automation, and production reliability",
   },
   robots: {
     index: true,

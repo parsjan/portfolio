@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, useScroll, useSpring } from "framer-motion"
-import { ChevronUp, Home, User, Briefcase, Code, Zap, Award, GraduationCap, Mail } from "lucide-react"
+import { ChevronUp, Home, User, Briefcase, Code, Zap, GraduationCap, Mail } from "lucide-react"
 
 export default function AnimatedStatusBar() {
   const [activeSection, setActiveSection] = useState("")
@@ -21,7 +21,6 @@ export default function AnimatedStatusBar() {
     { id: "experience", name: "Experience", color: "from-green-500 to-emerald-500", icon: Briefcase },
     { id: "projects", name: "Projects", color: "from-orange-500 to-red-500", icon: Code },
     { id: "skills", name: "Skills", color: "from-indigo-500 to-purple-500", icon: Zap },
-    { id: "certificates", name: "Certificates", color: "from-teal-500 to-cyan-500", icon: Award },
     { id: "education", name: "Education", color: "from-pink-500 to-rose-500", icon: GraduationCap },
     { id: "contact", name: "Contact", color: "from-yellow-500 to-orange-500", icon: Mail },
   ]
