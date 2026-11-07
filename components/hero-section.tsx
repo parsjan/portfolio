@@ -5,6 +5,7 @@ import { ArrowDown, Download, Mail, Github, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { profile } from "@/lib/resume-data"
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
@@ -129,44 +130,24 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-medium"
             >
-              <span className="block">Software Development Engineer</span>
+              <span className="block">{profile.title}</span>
               <motion.span
                 className="text-accent font-semibold"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                SDE-1 at Medecro Technologies
+                {profile.currentRole}
               </motion.span>
             </motion.div>
           </motion.div>
 
           <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
             <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 leading-relaxed">
-              Building{" "}
-              <motion.span
-                className="text-primary font-semibold"
-                whileHover={{ scale: 1.1, color: "var(--color-accent)" }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                scalable systems
-              </motion.span>
-              ,{" "}
-              <motion.span
-                className="text-accent font-semibold"
-                whileHover={{ scale: 1.1, color: "var(--color-primary)" }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                AI-driven applications
-              </motion.span>
-              , and{" "}
-              <motion.span
-                className="text-primary font-semibold"
-                whileHover={{ scale: 1.1, color: "var(--color-accent)" }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                cloud-native solutions
-              </motion.span>{" "}
-              that power the future of technology
+              Building and operating{" "}
+              <span className="text-primary font-semibold">multi-cloud Kubernetes</span>,{" "}
+              <span className="text-accent font-semibold">CI/CD automation</span>, and{" "}
+              <span className="text-primary font-semibold">observability</span> for a live, AI-powered healthcare
+              platform
             </p>
           </motion.div>
 
@@ -180,7 +161,7 @@ export default function HeroSection() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Link
-                href="/resume.pdf"
+                href={profile.resume}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -234,12 +215,12 @@ export default function HeroSection() {
           >
             {[
               {
-                href: "https://github.com/parsjan",
+                href: profile.github,
                 icon: Github,
                 label: "GitHub",
               },
               {
-                href: "https://www.linkedin.com/in/parasjai879a01247/",
+                href: profile.linkedin,
                 icon: Linkedin,
                 label: "LinkedIn",
               },
