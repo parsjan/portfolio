@@ -7,7 +7,6 @@ import AboutSection from "@/components/about-section"
 import ExperienceSection from "@/components/experience-section"
 import ProjectsSection from "@/components/projects-section"
 import SkillsSection from "@/components/skills-section"
-import CertificatesSection from "@/components/certificates-section"
 import EducationSection from "@/components/education-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
@@ -37,9 +36,6 @@ export default function Home() {
           </AnimatedSection>
           <AnimatedSection direction="fade" delay={0.2} stagger duration={1.0}>
             <SkillsSection />
-          </AnimatedSection>
-          <AnimatedSection direction="rotate" delay={0.1} duration={0.8} distance={80}>
-            <CertificatesSection />
           </AnimatedSection>
           <AnimatedSection direction="up" delay={0.1} duration={1.0} distance={100}>
             <EducationSection />

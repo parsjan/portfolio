@@ -1,7 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Phone, ArrowUp, Heart } from "lucide-react"
+import { Github, Linkedin, Mail, Phone, ArrowUp } from "lucide-react"
+import { profile } from "@/lib/resume-data"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,7 +12,6 @@ export default function Footer() {
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
-    { name: "Certificates", href: "#certificates" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
   ]
@@ -19,22 +19,22 @@ export default function Footer() {
   const socialLinks = [
     {
       name: "GitHub",
-      href: "https://github.com/parsjan",
+      href: profile.github,
       icon: <Github className="h-5 w-5" />,
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/in/parasjai879a01247/",
+      href: profile.linkedin,
       icon: <Linkedin className="h-5 w-5" />,
     },
     {
       name: "Email",
-      href: "mailto:parasjain230603@email.com",
+      href: `mailto:${profile.email}`,
       icon: <Mail className="h-5 w-5" />,
     },
     {
       name: "Phone",
-      href: "tel:+91934050933",
+      href: profile.phoneHref,
       icon: <Phone className="h-5 w-5" />,
     },
   ];
@@ -68,10 +68,10 @@ export default function Footer() {
                 <h3 className="text-3xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Paras Jain
                 </h3>
-                <p className="text-lg text-accent font-semibold">Software Development Engineer</p>
+                <p className="text-lg text-accent font-semibold">{profile.title}</p>
                 <p className="text-muted-foreground leading-relaxed max-w-md">
-                  Building scalable systems, AI-driven applications, and cloud-native solutions. Always excited to
-                  collaborate on innovative projects that make a difference.
+                  Multi-cloud Kubernetes, CI/CD automation, and production reliability for an AI-powered healthcare
+                  platform.
                 </p>
               </div>
 
@@ -119,18 +119,12 @@ export default function Footer() {
               <h4 className="font-semibold text-foreground">Get in Touch</h4>
               <div className="space-y-3 text-muted-foreground">
                 <p className="hover:text-accent transition-colors duration-200">
-                  <a href="mailto:paras.jain@email.com">paras.jain@email.com</a>
+                  <a href={`mailto:${profile.email}`}>{profile.email}</a>
                 </p>
                 <p className="hover:text-accent transition-colors duration-200">
-                  <a href="tel:+919876543210">+91 98765 43210</a>
+                  <a href={profile.phoneHref}>{profile.phone}</a>
                 </p>
-                <p>Gwalior, India</p>
-                <div className="pt-2">
-                  <span className="inline-flex items-center gap-2 text-sm">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    Available for opportunities
-                  </span>
-                </div>
+                <p>{profile.location}</p>
               </div>
             </div>
           </div>
@@ -140,9 +134,7 @@ export default function Footer() {
         <div className="border-t border-border/50 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-2 text-muted-foreground">
-              <span>&copy; {currentYear} Paras Jain. Made with</span>
-              <Heart className="h-4 w-4 text-red-500 animate-pulse" />
-              <span>and lots of coffee.</span>
+              <span>&copy; {currentYear} {profile.name}</span>
             </div>
 
             <div className="flex items-center space-x-4">

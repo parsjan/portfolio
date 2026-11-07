@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, Clock, CheckCircle } from "lucide-react"
+import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, CheckCircle } from "lucide-react"
+import { profile } from "@/lib/resume-data"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -24,36 +25,36 @@ export default function ContactSection() {
     {
       icon: <Mail className="h-6 w-6" />,
       label: "Email",
-      value: "parasjain230620@email.com",
-      href: "mailto:parasjain230620@email.com",
+      value: profile.email,
+      href: `mailto:${profile.email}`,
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       label: "Phone",
-      value: "+91 9340505933",
-      href: "tel:+919340505933",
+      value: profile.phone,
+      href: profile.phoneHref,
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       label: "Location",
-      value: "Noida, India",
-      href: "https://maps.google.com/?q=Noida,India",
+      value: profile.location,
+      href: "https://maps.google.com/?q=Sector+137,Noida",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <Github className="h-6 w-6" />,
       label: "GitHub",
-      value: "github.com/parasjain",
-      href: "https://github.com/parsjan",
+      value: profile.github.replace("https://", ""),
+      href: profile.github,
       color: "from-gray-600 to-gray-800",
     },
     {
       icon: <Linkedin className="h-6 w-6" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/parasjain",
-      href: "https://www.linkedin.com/in/parasjai879a01247/",
+      value: "LinkedIn profile",
+      href: profile.linkedin,
       color: "from-blue-600 to-blue-800",
     },
   ];
@@ -65,18 +66,19 @@ export default function ContactSection() {
     })
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    // No backend: hand the message off to the visitor's email client.
+    const body = `${formData.message}\n\n- ${formData.name} (${formData.email})`
+    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(
+      formData.subject,
+    )}&body=${encodeURIComponent(body)}`
 
     setIsSubmitting(false)
     setIsSubmitted(true)
     setFormData({ name: "", email: "", subject: "", message: "" })
-
-    // Reset success message after 5 seconds
     setTimeout(() => setIsSubmitted(false), 5000)
   }
 
@@ -95,7 +97,7 @@ export default function ContactSection() {
             Let's <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Connect</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to collaborate on your next project? Let's discuss how we can build something amazing together.
+            Open to DevOps, platform, and cloud engineering conversations.
           </p>
         </div>
 
@@ -105,8 +107,7 @@ export default function ContactSection() {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, or just having a chat about
-                technology. Feel free to reach out through any of the channels below.
+                The quickest way to reach me is email. You can also find me on LinkedIn and GitHub.
               </p>
             </div>
 
@@ -143,28 +144,6 @@ export default function ContactSection() {
               ))}
             </div>
 
-            {/* Availability Status */}
-            <Card className="glass dark:glass-dark border-0">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 text-white">
-                    <Clock className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h4 className="font-semibold text-foreground">Availability Status</h4>
-                      <Badge className="bg-green-500/20 text-green-600 border-green-500/30">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                        Available
-                      </Badge>
-                    </div>
-                    <p className="text-muted-foreground text-sm">
-                      Open to new opportunities and freelance projects. Typical response time: 24 hours.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Contact Form */}
@@ -182,9 +161,9 @@ export default function ContactSection() {
                       <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto">
                         <CheckCircle className="h-8 w-8 text-green-600" />
                       </div>
-                      <h4 className="text-xl font-semibold text-foreground">Message Sent!</h4>
+                      <h4 className="text-xl font-semibold text-foreground">Opening your email app...</h4>
                       <p className="text-muted-foreground">
-                        Thank you for reaching out. I'll get back to you within 24 hours.
+                        If nothing opened, email me directly at {profile.email}.
                       </p>
                     </div>
                   ) : (
@@ -257,7 +236,7 @@ export default function ContactSection() {
                         {isSubmitting ? (
                           <>
                             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                            Sending...
+                            Opening...
                           </>
                         ) : (
                           <>
